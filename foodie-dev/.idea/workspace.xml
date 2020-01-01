@@ -2,51 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce350694-a6ef-4e77-a0c4-fa076d4fd2e7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/foodie-dev-api/src/main/java/com/zcq/config/Swagger2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-api/src/main/java/com/zcq/controller/PassportController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-common/src/main/java/com/zcq/enums/Sex.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-common/src/main/java/com/zcq/utils/CookieUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-common/src/main/java/com/zcq/utils/DateUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-common/src/main/java/com/zcq/utils/JsonUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-common/src/main/java/com/zcq/utils/MD5Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-common/src/main/java/com/zcq/utils/ZCQJSONResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-common/src/main/java/org/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-common/src/main/java/org/n3r/idworker/Code.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-common/src/main/java/org/n3r/idworker/DayCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-common/src/main/java/org/n3r/idworker/Id.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-common/src/main/java/org/n3r/idworker/IdWorker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-common/src/main/java/org/n3r/idworker/InvalidSystemClock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-common/src/main/java/org/n3r/idworker/RandomCodeStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-common/src/main/java/org/n3r/idworker/Sid.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-common/src/main/java/org/n3r/idworker/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-common/src/main/java/org/n3r/idworker/WorkerIdStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-common/src/main/java/org/n3r/idworker/strategy/DayPrefixRandomCodeStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-common/src/main/java/org/n3r/idworker/strategy/DefaultRandomCodeStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-common/src/main/java/org/n3r/idworker/strategy/DefaultWorkerIdStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-common/src/main/java/org/n3r/idworker/strategy/FileLock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-common/src/main/java/org/n3r/idworker/utils/HttpReq.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-common/src/main/java/org/n3r/idworker/utils/IPv4Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-common/src/main/java/org/n3r/idworker/utils/Ip.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-common/src/main/java/org/n3r/idworker/utils/Props.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-common/src/main/java/org/n3r/idworker/utils/Serializes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-common/src/main/java/org/n3r/idworker/utils/Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-pojo/src/main/java/com/zcq/pojo/bo/UserBO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-service/src/main/java/com/zcq/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-service/src/main/java/com/zcq/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-dev-api/src/main/java/com/zcq/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-api/src/main/java/com/zcq/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-dev-api/src/main/java/com/zcq/controller/StuFooController.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-api/src/main/java/com/zcq/controller/StuFooController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-dev-api/target/classes/com/zcq/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-api/target/classes/com/zcq/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-dev-api/target/classes/com/zcq/controller/StuFooController.class" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-api/target/classes/com/zcq/controller/StuFooController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-dev-api/target/foodie-dev-api-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-api/target/foodie-dev-api-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-dev-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-dev-common/target/foodie-dev-common-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-common/target/foodie-dev-common-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-dev-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-dev-mapper/target/foodie-dev-mapper-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-mapper/target/foodie-dev-mapper-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-dev-pojo/target/foodie-dev-pojo-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-pojo/target/foodie-dev-pojo-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-dev-service/target/foodie-dev-service-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-service/target/foodie-dev-service-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-dev-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodie-dev-pojo/src/main/java/com/zcq/pojo/bo/UserBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-pojo/src/main/java/com/zcq/pojo/bo/UserBO.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -199,7 +156,7 @@
       <workItem from="1577634653581" duration="1061000" />
       <workItem from="1577718702056" duration="3203000" />
       <workItem from="1577754934316" duration="26000" />
-      <workItem from="1577861192993" duration="9706000" />
+      <workItem from="1577861192993" duration="10752000" />
     </task>
     <servers />
   </component>
