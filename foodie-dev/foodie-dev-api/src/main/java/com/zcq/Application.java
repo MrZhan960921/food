@@ -11,6 +11,8 @@ import tk.mybatis.spring.annotation.MapperScan;
 //扫描mybatis通用mapper
 @MapperScan(basePackages = "com.zcq.mapper")
 //@EnableTransactionManagement
+// 扫描所有包以及相关组件包
+@ComponentScan(basePackages = {"com.zcq", "org.n3r.idworker"})
 public class Application {
 
     public static void main(String[] args) {
