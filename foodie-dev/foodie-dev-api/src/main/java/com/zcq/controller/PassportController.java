@@ -6,6 +6,7 @@ import com.zcq.pojo.bo.UserBO;
 import com.zcq.service.UserService;
 import com.zcq.utils.CookieUtils;
 import com.zcq.utils.JsonUtils;
+import com.zcq.utils.MD5Utils;
 import com.zcq.utils.ZCQJSONResult;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -86,6 +87,35 @@ public class PassportController {
         return ZCQJSONResult.ok();
     }
 
+    @ApiOperation(value = "用户登录", notes = "用户登录", httpMethod = "POST")
+    @PostMapping("/login")
+    public ZCQJSONResult login(@RequestBody UserBO userBO,
+                                 HttpServletRequest request,
+                                 HttpServletResponse response) throws Exception {
+
+        String username = userBO.getUsername();
+        String password = userBO.getPassword();
+
+        // 0. 判断用户名和密码必须不为空
+        if (StringUtils.isBlank(username) ||
+                StringUtils.isBlank(password)) {
+            return ZCQJSONResult.errorMsg("用户名或密码不能为空");
+        }
+
+        // 1. 实现登录
+        Users userResult = userService.queryUserForLogin(username,
+                MD5Utils.getMD5Str(password));
+
+        if (userResult == null) {
+            return ZCQJSONResult.errorMsg("用户名或密码不正确");
+        }
+
+
+        // TODO 生成用户token，存入redis会话
+        // TODO 同步购物车数据
+
+        return ZCQJSONResult.ok(userResult);
+    }
 
     private Users setNullProperty(Users userResult) {
         userResult.setPassword(null);
