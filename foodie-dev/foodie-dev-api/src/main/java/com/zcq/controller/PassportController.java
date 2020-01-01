@@ -126,6 +126,20 @@ public class PassportController {
         return ZCQJSONResult.ok(userResult);
     }
 
+    @ApiOperation(value = "用户退出登录", notes = "用户退出登录", httpMethod = "POST")
+    @PostMapping("/logout")
+    public ZCQJSONResult logout(@RequestParam String userId,
+                                  HttpServletRequest request,
+                                  HttpServletResponse response) {
+
+        // 清除用户的相关信息的cookie
+        CookieUtils.deleteCookie(request, response, "user");
+
+        // TODO 用户退出登录，需要清空购物车
+        // TODO 分布式会话中需要清除用户数据
+
+        return ZCQJSONResult.ok();
+    }
 
     /**
      * 使得用户的一些重要信息不返回
