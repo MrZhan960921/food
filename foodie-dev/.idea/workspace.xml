@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce350694-a6ef-4e77-a0c4-fa076d4fd2e7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/foodie-dev-api/src/main/java/com/zcq/controller/HelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foodie-dev-api/src/main/java/com/zcq/controller/PassportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-api/src/main/java/com/zcq/controller/PassportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-dev-api/target/classes/com/zcq/controller/PassportController.class" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-api/target/classes/com/zcq/controller/PassportController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-dev-common/src/main/java/com/zcq/utils/CookieUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-common/src/main/java/com/zcq/utils/CookieUtils.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -159,7 +156,7 @@
       <workItem from="1577634653581" duration="1061000" />
       <workItem from="1577718702056" duration="3203000" />
       <workItem from="1577754934316" duration="26000" />
-      <workItem from="1577861192993" duration="14232000" />
+      <workItem from="1577861192993" duration="15217000" />
     </task>
     <servers />
   </component>
