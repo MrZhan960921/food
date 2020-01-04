@@ -4,6 +4,7 @@ import com.zcq.mapper.CategoryMapper;
 import com.zcq.mapper.CategoryMapperCustom;
 import com.zcq.pojo.Category;
 import com.zcq.pojo.vo.CategoryVO;
+import com.zcq.pojo.vo.NewItemsVO;
 import com.zcq.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -43,4 +44,13 @@ public class CategoryServiceImpl implements CategoryService {
         return categoryMapperCustom.getSubCatList(rootCatId);
     }
 
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public List<NewItemsVO> getSixNewItemsLazy(Integer rootCatId) {
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("rootCatId", rootCatId);
+
+        return categoryMapperCustom.getSixNewItemsLazy(map);
+    }
 }

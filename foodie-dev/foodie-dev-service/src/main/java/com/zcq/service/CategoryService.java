@@ -2,6 +2,7 @@ package com.zcq.service;
 
 import com.zcq.pojo.Category;
 import com.zcq.pojo.vo.CategoryVO;
+import com.zcq.pojo.vo.NewItemsVO;
 
 
 import java.util.List;
@@ -21,6 +22,13 @@ public interface CategoryService {
      */
     public List<CategoryVO> getSubCatList(Integer rootCatId);
 
+
+    /**
+     * 查询首页每个一级分类下的6条最新商品数据
+     * @param rootCatId
+     * @return
+     */
+    public List<NewItemsVO> getSixNewItemsLazy(Integer rootCatId);
 
 
 }
