@@ -2,26 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce350694-a6ef-4e77-a0c4-fa076d4fd2e7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/foodie-dev-api/src/main/java/com/zcq/controller/ShopcatController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-pojo/src/main/java/com/zcq/pojo/bo/ShopcartBO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodie-dev-pojo/src/main/java/com/zcq/pojo/vo/ShopcartVO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foodie-dev-api/src/main/java/com/zcq/controller/ItemsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-api/src/main/java/com/zcq/controller/ItemsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foodie-dev-api/target/classes/com/zcq/controller/ItemsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-api/target/classes/com/zcq/controller/ItemsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-dev-api/target/foodie-dev-api-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-api/target/foodie-dev-api-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-dev-common/target/foodie-dev-common-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-common/target/foodie-dev-common-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-dev-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foodie-dev-mapper/src/main/java/com/zcq/mapper/ItemsMapperCustom.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-mapper/src/main/java/com/zcq/mapper/ItemsMapperCustom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foodie-dev-mapper/src/main/resources/mapper/ItemsMapperCustom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-mapper/src/main/resources/mapper/ItemsMapperCustom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foodie-dev-mapper/target/classes/com/zcq/mapper/ItemsMapperCustom.class" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-mapper/target/classes/com/zcq/mapper/ItemsMapperCustom.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foodie-dev-mapper/target/classes/mapper/ItemsMapperCustom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-mapper/target/classes/mapper/ItemsMapperCustom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-dev-mapper/target/foodie-dev-mapper-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-mapper/target/foodie-dev-mapper-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-dev-pojo/target/foodie-dev-pojo-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-pojo/target/foodie-dev-pojo-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-dev-pojo/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-pojo/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foodie-dev-service/src/main/java/com/zcq/service/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-service/src/main/java/com/zcq/service/ItemService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foodie-dev-service/src/main/java/com/zcq/service/impl/ItemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-service/src/main/java/com/zcq/service/impl/ItemServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foodie-dev-service/target/classes/com/zcq/service/ItemService.class" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-service/target/classes/com/zcq/service/ItemService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foodie-dev-service/target/classes/com/zcq/service/impl/ItemServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-service/target/classes/com/zcq/service/impl/ItemServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-dev-service/target/foodie-dev-service-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-service/target/foodie-dev-service-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -83,9 +75,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.zcq.pojo.vo" />
       <recent name="com.zcq.pojo.bo" />
       <recent name="com.zcq.controller" />
-      <recent name="com.zcq.pojo.vo" />
       <recent name="com.zcq.utils" />
       <recent name="com.zcq.mapper" />
     </key>
@@ -191,7 +183,7 @@
       <workItem from="1577754934316" duration="26000" />
       <workItem from="1577861192993" duration="18885000" />
       <workItem from="1577928095908" duration="25000" />
-      <workItem from="1578120784699" duration="11399000" />
+      <workItem from="1578120784699" duration="12950000" />
     </task>
     <servers />
   </component>

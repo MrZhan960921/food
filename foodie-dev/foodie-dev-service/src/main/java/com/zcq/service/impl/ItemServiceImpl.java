@@ -11,6 +11,7 @@ import com.zcq.pojo.*;
 import com.zcq.pojo.vo.CommentLevelCountsVO;
 import com.zcq.pojo.vo.ItemCommentVO;
 import com.zcq.pojo.vo.SearchItemsVO;
+import com.zcq.pojo.vo.ShopcartVO;
 import com.zcq.service.ItemService;
 import com.zcq.utils.DesensitizationUtil;
 import com.zcq.utils.PagedGridResult;
@@ -143,6 +144,17 @@ public class ItemServiceImpl implements ItemService {
         List<SearchItemsVO> list = itemsMapperCustom.searchItemsByThirdCat(map);
 
         return setterPagedGrid(list, page);
+    }
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public List<ShopcartVO> queryItemsBySpecIds(String specIds) {
+
+        String ids[] = specIds.split(",");
+        List<String> specIdsList = new ArrayList<>();
+        Collections.addAll(specIdsList, ids);
+
+        return itemsMapperCustom.queryItemsBySpecIds(specIdsList);
     }
 
 
