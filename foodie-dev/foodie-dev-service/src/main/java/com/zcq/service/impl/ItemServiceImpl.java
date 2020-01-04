@@ -1,7 +1,6 @@
 package com.zcq.service.impl;
 
 
-
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.zcq.enums.CommentLevel;
@@ -11,6 +10,7 @@ import com.zcq.pojo.*;
 
 import com.zcq.pojo.vo.CommentLevelCountsVO;
 import com.zcq.pojo.vo.ItemCommentVO;
+import com.zcq.pojo.vo.SearchItemsVO;
 import com.zcq.service.ItemService;
 import com.zcq.utils.DesensitizationUtil;
 import com.zcq.utils.PagedGridResult;
@@ -114,6 +114,20 @@ public class ItemServiceImpl implements ItemService {
         for (ItemCommentVO vo : list) {
             vo.setNickname(DesensitizationUtil.commonDisplay(vo.getNickname()));
         }
+
+        return setterPagedGrid(list, page);
+    }
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public PagedGridResult searhItems(String keywords, String sort, Integer page, Integer pageSize) {
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("keywords", keywords);
+        map.put("sort", sort);
+
+        PageHelper.startPage(page, pageSize);
+        List<SearchItemsVO> list = itemsMapperCustom.searchItems(map);
 
         return setterPagedGrid(list, page);
     }

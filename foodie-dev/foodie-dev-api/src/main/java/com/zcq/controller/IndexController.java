@@ -76,4 +76,6 @@ public class IndexController {
         List<NewItemsVO> list = categoryService.getSixNewItemsLazy(rootCatId);
         return ZCQJSONResult.ok(list);
     }
+
+
 }
