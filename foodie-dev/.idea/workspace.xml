@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce350694-a6ef-4e77-a0c4-fa076d4fd2e7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/foodie-dev-api/src/main/java/com/zcq/controller/IndexController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodie-dev-common/src/main/java/com/zcq/enums/YesOrNo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodie-dev-mapper/src/main/java/com/zcq/mapper/CategoryMapperCustom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodie-dev-mapper/src/main/resources/mapper/CategoryMapperCustom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodie-dev-pojo/src/main/java/com/zcq/pojo/vo/CategoryVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodie-dev-pojo/src/main/java/com/zcq/pojo/vo/SubCategoryVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodie-dev-service/src/main/java/com/zcq/service/CarouselService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodie-dev-service/src/main/java/com/zcq/service/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodie-dev-service/src/main/java/com/zcq/service/impl/CarouselServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodie-dev-service/src/main/java/com/zcq/service/impl/CategoryServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-dev-api/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-api/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-dev-api/target/classes/com/zcq/controller/PassportController.class" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-api/target/classes/com/zcq/controller/PassportController.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +64,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/foodie-dev-api/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/foodie-dev-mapper/src/main/resources/mapper" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -66,16 +74,16 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.zcq.aspect" />
-      <recent name="com.zcq.controller" />
-      <recent name="com.zcq.config" />
-      <recent name="com.zcq.utils" />
+      <recent name="com.zcq.mapper" />
+      <recent name="com.zcq.pojo.vo" />
+      <recent name="com.zcq.service.impl" />
+      <recent name="com.zcq.service" />
       <recent name="com.zcq.enums" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\code\food\foodie-dev\foodie-dev-mapper\src\main\resources\mapper" />
       <recent name="C:\code\food\foodie-dev\foodie-dev-api\src\main\resources" />
       <recent name="C:\code\food\foodie-dev\foodie-dev-common\src\main\java" />
-      <recent name="C:\code\food\foodie-dev\foodie-dev-mapper\src\main\resources\mapper" />
       <recent name="C:\code\food\foodie-dev\foodie-dev-mapper\src\main\java\com\zcq\mapper" />
       <recent name="C:\code\food\foodie-dev\foodie-dev-pojo\src\main\java\com\zcq\pojo" />
     </key>
@@ -158,7 +166,9 @@
       <workItem from="1577634653581" duration="1061000" />
       <workItem from="1577718702056" duration="3203000" />
       <workItem from="1577754934316" duration="26000" />
-      <workItem from="1577861192993" duration="17324000" />
+      <workItem from="1577861192993" duration="18885000" />
+      <workItem from="1577928095908" duration="25000" />
+      <workItem from="1578120784699" duration="2238000" />
     </task>
     <servers />
   </component>
