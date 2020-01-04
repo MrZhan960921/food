@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce350694-a6ef-4e77-a0c4-fa076d4fd2e7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/foodie-dev-pojo/src/main/java/com/zcq/pojo/vo/ShopcartVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodie-dev-api/src/main/java/com/zcq/controller/AddressController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodie-dev-common/src/main/java/com/zcq/utils/MobileEmailUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodie-dev-pojo/src/main/java/com/zcq/pojo/bo/AddressBO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodie-dev-service/src/main/java/com/zcq/service/AddressService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodie-dev-service/src/main/java/com/zcq/service/impl/AddressServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-dev-api/src/main/java/com/zcq/controller/ItemsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-api/src/main/java/com/zcq/controller/ItemsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-dev-api/target/classes/com/zcq/controller/ItemsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-api/target/classes/com/zcq/controller/ItemsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-dev-mapper/src/main/java/com/zcq/mapper/ItemsMapperCustom.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-mapper/src/main/java/com/zcq/mapper/ItemsMapperCustom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-dev-mapper/src/main/resources/mapper/ItemsMapperCustom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-mapper/src/main/resources/mapper/ItemsMapperCustom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-dev-mapper/target/classes/com/zcq/mapper/ItemsMapperCustom.class" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-mapper/target/classes/com/zcq/mapper/ItemsMapperCustom.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-dev-mapper/target/classes/mapper/ItemsMapperCustom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-mapper/target/classes/mapper/ItemsMapperCustom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-dev-service/src/main/java/com/zcq/service/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-service/src/main/java/com/zcq/service/ItemService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-dev-service/src/main/java/com/zcq/service/impl/ItemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-service/src/main/java/com/zcq/service/impl/ItemServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-dev-service/target/classes/com/zcq/service/ItemService.class" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-service/target/classes/com/zcq/service/ItemService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodie-dev-service/target/classes/com/zcq/service/impl/ItemServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-service/target/classes/com/zcq/service/impl/ItemServiceImpl.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,11 +69,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.zcq.pojo.vo" />
-      <recent name="com.zcq.pojo.bo" />
-      <recent name="com.zcq.controller" />
       <recent name="com.zcq.utils" />
-      <recent name="com.zcq.mapper" />
+      <recent name="com.zcq.pojo.bo" />
+      <recent name="com.zcq.service.impl" />
+      <recent name="com.zcq.service" />
+      <recent name="com.zcq.controller" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\code\food\foodie-dev\foodie-dev-mapper\src\main\resources\mapper" />
@@ -183,7 +177,7 @@
       <workItem from="1577754934316" duration="26000" />
       <workItem from="1577861192993" duration="18885000" />
       <workItem from="1577928095908" duration="25000" />
-      <workItem from="1578120784699" duration="12950000" />
+      <workItem from="1578120784699" duration="14792000" />
     </task>
     <servers />
   </component>
