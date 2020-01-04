@@ -17,7 +17,7 @@ import java.util.List;
 @Api(value = "商品接口", tags = {"商品信息展示的相关接口"})
 @RestController
 @RequestMapping("items")
-public class ItemsController  {
+public class ItemsController extends BaseController {
 
     @Autowired
     private ItemService itemService;
@@ -82,7 +82,7 @@ public class ItemsController  {
         }
 
         if (pageSize == null) {
-            pageSize = 10;
+            pageSize = COMMON_PAGE_SIZE;
         }
 
         PagedGridResult grid = itemService.queryPagedComments(itemId,
