@@ -35,7 +35,11 @@ public class OrdersController extends BaseController {
     @Autowired
     private OrderService orderService;
 
-
+    /**
+     * 调用支付中心的接口
+     */
+    @Autowired
+    private RestTemplate restTemplate;
 
     @ApiOperation(value = "用户下单", notes = "用户下单", httpMethod = "POST")
     @PostMapping("/create")
@@ -68,6 +72,26 @@ public class OrdersController extends BaseController {
         // 3. 向支付中心发送当前订单，用于保存支付中心的订单数据
         MerchantOrdersVO merchantOrdersVO = orderVO.getMerchantOrdersVO();
         merchantOrdersVO.setReturnUrl(payReturnUrl);
+        // 为了方便测试购买，所以所有的支付金额都统一改为1分钱
+        merchantOrdersVO.setAmount(1);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        headers.add("zcqUserId","zcq");
+        headers.add("password","zcq");
+
+        HttpEntity<MerchantOrdersVO> entity =
+                new HttpEntity<>(merchantOrdersVO, headers);
+
+        ResponseEntity<ZCQJSONResult> responseEntity =
+                restTemplate.postForEntity(paymentUrl,
+                        entity,
+                        ZCQJSONResult.class);
+        ZCQJSONResult paymentResult = responseEntity.getBody();
+        if (paymentResult.getStatus() != 200) {
+            logger.error("发送错误：{}", paymentResult.getMsg());
+            return ZCQJSONResult.errorMsg("支付中心订单创建失败，请联系管理员！");
+        }
 
         return ZCQJSONResult.ok(orderId);
     }
