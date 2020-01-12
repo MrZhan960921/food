@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce350694-a6ef-4e77-a0c4-fa076d4fd2e7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/foodie-dev-api/src/main/java/com/zcq/controller/center/CenterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodie-dev-api/src/main/java/com/zcq/controller/center/CenterUserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodie-dev-pojo/src/main/java/com/zcq/pojo/bo/center/CenterUserBO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodie-dev-service/src/main/java/com/zcq/service/center/CenterUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodie-dev-service/src/main/java/com/zcq/service/impl/center/CenterUserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodie-dev-api/target/classes/com/zcq/config/OrderJob.class" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-api/target/classes/com/zcq/config/OrderJob.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,11 +70,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.zcq.pojo.bo.center" />
+      <recent name="com.zcq.controller.center" />
+      <recent name="com.zcq.service.impl.center" />
+      <recent name="com.zcq.service.center" />
       <recent name="com.zcq.config" />
-      <recent name="com.zcq.pojo.vo" />
-      <recent name="com.zcq.enums" />
-      <recent name="com.zcq.service.impl" />
-      <recent name="com.zcq.service" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\code\food\foodie-dev\foodie-dev-mapper\src\main\resources\mapper" />
@@ -175,7 +181,7 @@
       <workItem from="1578120784699" duration="24245000" />
       <workItem from="1578273258899" duration="37000" />
       <workItem from="1578723528025" duration="7750000" />
-      <workItem from="1578822789370" duration="3384000" />
+      <workItem from="1578822789370" duration="5313000" />
     </task>
     <servers />
   </component>
