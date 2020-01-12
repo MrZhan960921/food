@@ -106,4 +106,16 @@ public class OrdersController extends BaseController {
         orderService.updateOrderStatus(merchantOrderId, OrderStatusEnum.WAIT_DELIVER.type);
         return HttpStatus.OK.value();
     }
+
+    /**
+     * 查询订单信息，用于支付后轮询到支付成功，跳转支付成功页面
+     * @param orderId
+     * @return
+     */
+    @PostMapping("getPaidOrderInfo")
+    public ZCQJSONResult getPaidOrderInfo(String orderId) {
+
+        OrderStatus orderStatus = orderService.queryOrderStatusInfo(orderId);
+        return ZCQJSONResult.ok(orderStatus);
+    }
 }
