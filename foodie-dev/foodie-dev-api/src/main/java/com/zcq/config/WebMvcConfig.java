@@ -15,4 +15,11 @@ public class WebMvcConfig implements WebMvcConfigurer {
         return builder.build();
     }
 
+    // 实现静态资源的映射
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/**")
+                .addResourceLocations("classpath:/META-INF/resources/")  // 映射swagger2
+                .addResourceLocations("file:/workspaces/images/");  // 映射本地静态资源
+    }
 }
