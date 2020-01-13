@@ -19,7 +19,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/**")
-                .addResourceLocations("classpath:/META-INF/resources/")  // 映射swagger2
+                .addResourceLocations("classpath:/META-INF/resources/")  // 默认是有的，配置了需要重新映射swagger2
                 .addResourceLocations("file:/workspaces/images/");  // 映射本地静态资源
     }
 }
