@@ -13,6 +13,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 //@EnableTransactionManagement
 // 扫描所有包以及相关组件包
 @ComponentScan(basePackages = {"com.zcq", "org.n3r.idworker"})
+@EnableScheduling       // 开启定时任务
 public class Application {
 
     public static void main(String[] args) {

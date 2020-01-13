@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce350694-a6ef-4e77-a0c4-fa076d4fd2e7" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foodie-dev-api/foodie-dev-api.iml" beforeDir="false" />
@@ -10,6 +11,15 @@
       <change beforePath="$PROJECT_DIR$/foodie-dev-common/foodie-dev-common.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/foodie-dev-pojo/foodie-dev-pojo.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/foodie-dev.iml" beforeDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/foodie-dev-api/src/main/java/com/zcq/controller/center/CenterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodie-dev-api/src/main/java/com/zcq/controller/center/CenterUserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodie-dev-pojo/src/main/java/com/zcq/pojo/bo/center/CenterUserBO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodie-dev-service/src/main/java/com/zcq/service/center/CenterUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodie-dev-service/src/main/java/com/zcq/service/impl/center/CenterUserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodie-dev-api/target/classes/com/zcq/config/OrderJob.class" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-api/target/classes/com/zcq/config/OrderJob.class" afterDir="false" />
+>>>>>>> 2a86ad9b8a5e548a1f32beafee4664ae3b1b61ae
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,8 +47,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -68,7 +78,11 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+=======
+    <property name="last_opened_file_path" value="C:/视频/源码/Architect-Stage-1-Monolith-master/architect-stage-1-monolith/第1阶段单体架构/支付中心源码/foodie-payment" />
+>>>>>>> 2a86ad9b8a5e548a1f32beafee4664ae3b1b61ae
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -78,16 +92,16 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.zcq.aspect" />
-      <recent name="com.zcq.controller" />
+      <recent name="com.zcq.pojo.bo.center" />
+      <recent name="com.zcq.controller.center" />
+      <recent name="com.zcq.service.impl.center" />
+      <recent name="com.zcq.service.center" />
       <recent name="com.zcq.config" />
-      <recent name="com.zcq.utils" />
-      <recent name="com.zcq.enums" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\code\food\foodie-dev\foodie-dev-mapper\src\main\resources\mapper" />
       <recent name="C:\code\food\foodie-dev\foodie-dev-api\src\main\resources" />
       <recent name="C:\code\food\foodie-dev\foodie-dev-common\src\main\java" />
-      <recent name="C:\code\food\foodie-dev\foodie-dev-mapper\src\main\resources\mapper" />
       <recent name="C:\code\food\foodie-dev\foodie-dev-mapper\src\main\java\com\zcq\mapper" />
       <recent name="C:\code\food\foodie-dev\foodie-dev-pojo\src\main\java\com\zcq\pojo" />
     </key>
@@ -105,6 +119,19 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.Application">
+    <configuration name="DesensitizationUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zcq.utils.DesensitizationUtil" />
+      <module name="foodie-dev-common" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zcq.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TransTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="foodie-dev-api" />
       <extension name="coverage">
@@ -152,6 +179,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.Application" />
+        <item itemvalue="Application.DesensitizationUtil" />
         <item itemvalue="JUnit.TransTest.myTest" />
         <item itemvalue="JUnit.TransTest" />
       </list>
@@ -170,10 +198,19 @@
       <workItem from="1577634653581" duration="1061000" />
       <workItem from="1577718702056" duration="3203000" />
       <workItem from="1577754934316" duration="26000" />
+<<<<<<< HEAD
       <workItem from="1577861192993" duration="17324000" />
       <workItem from="1577979902346" duration="2301000" />
       <workItem from="1578917609418" duration="69000" />
       <workItem from="1578917694996" duration="267000" />
+=======
+      <workItem from="1577861192993" duration="18885000" />
+      <workItem from="1577928095908" duration="25000" />
+      <workItem from="1578120784699" duration="24245000" />
+      <workItem from="1578273258899" duration="37000" />
+      <workItem from="1578723528025" duration="7750000" />
+      <workItem from="1578822789370" duration="5313000" />
+>>>>>>> 2a86ad9b8a5e548a1f32beafee4664ae3b1b61ae
     </task>
     <servers />
   </component>
