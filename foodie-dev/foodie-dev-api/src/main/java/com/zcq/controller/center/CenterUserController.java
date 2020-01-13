@@ -4,6 +4,7 @@ package com.zcq.controller.center;
 import com.zcq.controller.BaseController;
 import com.zcq.pojo.Users;
 import com.zcq.pojo.bo.center.CenterUserBO;
+import com.zcq.resource.FileUpload;
 import com.zcq.service.center.CenterUserService;
 import com.zcq.utils.CookieUtils;
 import com.zcq.utils.JsonUtils;
@@ -39,6 +40,9 @@ public class CenterUserController extends BaseController {
     private CenterUserService centerUserService;
 
 
+    @Autowired
+    private FileUpload fileUpload;
+
     @ApiOperation(value = "用户头像修改", notes = "用户头像修改", httpMethod = "POST")
     @PostMapping("uploadFace")
     public ZCQJSONResult uploadFace(
@@ -51,7 +55,9 @@ public class CenterUserController extends BaseController {
         // .sh .php
 
         // 定义头像保存的地址
-        String fileSpace = IMAGE_USER_FACE_LOCATION;
+//        String fileSpace = IMAGE_USER_FACE_LOCATION;
+
+        String fileSpace = fileUpload.getImageUserFaceLocation();
         // 在路径上为每一个用户增加一个userid，用于区分不同用户上传
         String uploadPathPrefix = File.separator + userId;
 
