@@ -51,7 +51,60 @@ public class MyOrdersController extends BaseController {
         return ZCQJSONResult.ok(grid);
     }
 
+    // 商家发货没有后端，所以这个接口仅仅只是用于模拟
+    @ApiOperation(value="商家发货", notes="商家发货", httpMethod = "GET")
+    @GetMapping("/deliver")
+    public ZCQJSONResult deliver(
+            @ApiParam(name = "orderId", value = "订单id", required = true)
+            @RequestParam String orderId) throws Exception {
+
+        if (StringUtils.isBlank(orderId)) {
+            return ZCQJSONResult.errorMsg("订单ID不能为空");
+        }
+        myOrdersService.updateDeliverOrderStatus(orderId);
+        return ZCQJSONResult.ok();
+    }
+
+    @ApiOperation(value="用户确认收货", notes="用户确认收货", httpMethod = "POST")
+    @PostMapping("/confirmReceive")
+    public ZCQJSONResult confirmReceive(
+            @ApiParam(name = "orderId", value = "订单id", required = true)
+            @RequestParam String orderId,
+            @ApiParam(name = "userId", value = "用户id", required = true)
+            @RequestParam String userId) throws Exception {
+
+        ZCQJSONResult checkResult = checkUserOrder(userId, orderId);
+        if (checkResult.getStatus() != HttpStatus.OK.value()) {
+            return checkResult;
+        }
+
+        boolean res = myOrdersService.updateReceiveOrderStatus(orderId);
+        if (!res) {
+            return ZCQJSONResult.errorMsg("订单确认收货失败！");
+        }
+
+        return ZCQJSONResult.ok();
+    }
 
 
+    @ApiOperation(value="用户删除订单", notes="用户删除订单", httpMethod = "POST")
+    @PostMapping("/delete")
+    public ZCQJSONResult delete(
+            @ApiParam(name = "orderId", value = "订单id", required = true)
+            @RequestParam String orderId,
+            @ApiParam(name = "userId", value = "用户id", required = true)
+            @RequestParam String userId) throws Exception {
 
+        ZCQJSONResult checkResult = checkUserOrder(userId, orderId);
+        if (checkResult.getStatus() != HttpStatus.OK.value()) {
+            return checkResult;
+        }
+
+        boolean res = myOrdersService.deleteOrder(userId, orderId);
+        if (!res) {
+            return ZCQJSONResult.errorMsg("订单删除失败！");
+        }
+
+        return ZCQJSONResult.ok();
+    }
 }
