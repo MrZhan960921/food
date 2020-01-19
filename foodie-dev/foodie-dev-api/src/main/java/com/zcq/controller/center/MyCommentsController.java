@@ -76,4 +76,30 @@ public class MyCommentsController extends BaseController {
         return ZCQJSONResult.ok();
     }
 
+    @ApiOperation(value = "查询我的评价", notes = "查询我的评价", httpMethod = "POST")
+    @PostMapping("/query")
+    public ZCQJSONResult query(
+            @ApiParam(name = "userId", value = "用户id", required = true)
+            @RequestParam String userId,
+            @ApiParam(name = "page", value = "查询下一页的第几页", required = false)
+            @RequestParam Integer page,
+            @ApiParam(name = "pageSize", value = "分页的每一页显示的条数", required = false)
+            @RequestParam Integer pageSize) {
+
+        if (StringUtils.isBlank(userId)) {
+            return ZCQJSONResult.errorMsg(null);
+        }
+        if (page == null) {
+            page = 1;
+        }
+        if (pageSize == null) {
+            pageSize = COMMON_PAGE_SIZE;
+        }
+
+        PagedGridResult grid = myCommentsService.queryMyComments(userId,
+                page,
+                pageSize);
+
+        return ZCQJSONResult.ok(grid);
+    }
 }

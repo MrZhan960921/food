@@ -25,5 +25,12 @@ public interface MyCommentsService {
      */
     public void saveComments(String orderId, String userId, List<OrderItemsCommentBO> commentList);
 
-
+    /**
+     * 我的评价查询 分页
+     * @param userId
+     * @param page
+     * @param pageSize
+     * @return
+     */
+    public PagedGridResult queryMyComments(String userId, Integer page, Integer pageSize);
 }
