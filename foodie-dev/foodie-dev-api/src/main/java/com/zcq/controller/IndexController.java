@@ -64,7 +64,14 @@ public class IndexController {
     @ApiOperation(value = "获取商品分类(一级分类)", notes = "获取商品分类(一级分类)", httpMethod = "GET")
     @GetMapping("/cats")
     public ZCQJSONResult cats() {
-        List<Category> list = categoryService.queryAllRootLevelCat();
+        String categoryStr = redisOperator.get("category");
+        List<Category> list = null;
+        if (StringUtils.isBlank(categoryStr)){
+            list = categoryService.queryAllRootLevelCat();
+            redisOperator.set("category", JsonUtils.objectToJson(list));
+        }else {
+            list = JsonUtils.jsonToList(categoryStr, Category.class);
+        }
         return ZCQJSONResult.ok(list);
     }
 
@@ -74,11 +81,18 @@ public class IndexController {
             @ApiParam(name = "rootCatId", value = "一级分类id", required = true)
             @PathVariable Integer rootCatId) {
 
-        if (rootCatId == null) {
+        if (null == rootCatId){
             return ZCQJSONResult.errorMsg("分类不存在");
         }
 
-        List<CategoryVO> list = categoryService.getSubCatList(rootCatId);
+        String subCategoryStr = redisOperator.get("subCategory:"+rootCatId);
+        List<CategoryVO> list = null;
+        if (StringUtils.isBlank(subCategoryStr)){
+            list = categoryService.getSubCatList(rootCatId);
+            redisOperator.set("subCategory:"+rootCatId, JsonUtils.objectToJson(list));
+        }else {
+            list = JsonUtils.jsonToList(subCategoryStr, CategoryVO.class);
+        }
         return ZCQJSONResult.ok(list);
     }
 
