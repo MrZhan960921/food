@@ -1,6 +1,7 @@
 package com.zcq.controller;
 
 import com.zcq.pojo.Orders;
+import com.zcq.service.center.MyOrdersService;
 import com.zcq.utils.ZCQJSONResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,4 +30,18 @@ public class BaseController {
 //    public static final String IMAGE_USER_FACE_LOCATION = "/workspaces/images/foodie/faces";
 
 
+    @Autowired
+    public MyOrdersService myOrdersService;
+
+    /**
+     * 用于验证用户和订单是否有关联关系，避免非法用户调用
+     * @return
+     */
+    public ZCQJSONResult checkUserOrder(String userId, String orderId) {
+        Orders order = myOrdersService.queryMyOrder(userId, orderId);
+        if (order == null) {
+            return ZCQJSONResult.errorMsg("订单不存在！");
+        }
+        return ZCQJSONResult.ok(order);
+    }
 }

@@ -15,16 +15,10 @@
       <change beforePath="$PROJECT_DIR$/foodie-dev-api/src/main/java/com/zcq/controller/center/CenterUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-api/src/main/java/com/zcq/controller/center/CenterUserController.java" afterDir="false" />
 =======
     <list default="true" id="19c7fb26-06ef-48c9-a98e-4566617aaa85" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/foodie-dev-api/src/main/java/com/zcq/controller/center/MyOrdersController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-mapper/src/main/java/com/zcq/mapper/OrdersMapperCustom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-mapper/src/main/resources/mapper/OrdersMapperCustom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-pojo/src/main/java/com/zcq/pojo/vo/MyOrdersVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-pojo/src/main/java/com/zcq/pojo/vo/MySubOrderItemVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-service/src/main/java/com/zcq/service/center/MyOrdersService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-service/src/main/java/com/zcq/service/impl/center/BaseService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/foodie-dev-service/src/main/java/com/zcq/service/impl/center/MyOrdersServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../foodie-center/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../foodie-center/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodie-dev-api/src/main/java/com/zcq/WarStarterApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/foodie-dev-api/src/main/java/com/zcq/config/WebMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-api/src/main/java/com/zcq/config/WebMvcConfig.java" afterDir="false" />
 >>>>>>> a474ade9dd5ba384c7c9229616948acfb3f47f51
       <change beforePath="$PROJECT_DIR$/foodie-dev-api/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-api/src/main/resources/application.yml" afterDir="false" />
@@ -46,6 +40,10 @@
       <change beforePath="$PROJECT_DIR$/foodie-dev-service/target/classes/com/zcq/service/center/CenterUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-service/target/classes/com/zcq/service/center/CenterUserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foodie-dev-service/target/classes/com/zcq/service/impl/center/CenterUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-service/target/classes/com/zcq/service/impl/center/CenterUserServiceImpl.class" afterDir="false" />
 >>>>>>> a474ade9dd5ba384c7c9229616948acfb3f47f51
+=======
+      <change beforePath="$PROJECT_DIR$/foodie-dev-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/foodie-dev-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+>>>>>>> 84c00eb377c3656f1f9370f692eda7e7794528f2
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,6 +74,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -86,16 +85,20 @@
 =======
     <property name="last_opened_file_path" value="$PROJECT_DIR$/foodie-dev-mapper/src/main/resources/mapper" />
 >>>>>>> a474ade9dd5ba384c7c9229616948acfb3f47f51
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/foodie-dev-api/src/main/resources" />
+>>>>>>> 84c00eb377c3656f1f9370f692eda7e7794528f2
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.zcq.controller.center" />
-      <recent name="com.zcq.service.impl.center" />
-      <recent name="com.zcq.service.center" />
+      <recent name="com.zcq" />
       <recent name="com.zcq.pojo.vo" />
       <recent name="com.zcq.mapper" />
+      <recent name="com.zcq.pojo.bo.center" />
+      <recent name="com.zcq.controller.center" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\mycode\food\foodie-dev\foodie-dev-api\src\main\resources" />
       <recent name="C:\mycode\food\foodie-dev\foodie-dev-mapper\src\main\resources\mapper" />
     </key>
   </component>
@@ -158,7 +161,16 @@
       <workItem from="1579004430030" duration="1935000" />
       <workItem from="1579007651984" duration="3857000" />
       <workItem from="1579020170779" duration="649000" />
+<<<<<<< HEAD
 >>>>>>> a474ade9dd5ba384c7c9229616948acfb3f47f51
+=======
+      <workItem from="1579177469672" duration="111000" />
+      <workItem from="1579177593024" duration="606000" />
+      <workItem from="1579190634298" duration="1173000" />
+      <workItem from="1579281971825" duration="2218000" />
+      <workItem from="1579333541582" duration="2863000" />
+      <workItem from="1579436754653" duration="1866000" />
+>>>>>>> 84c00eb377c3656f1f9370f692eda7e7794528f2
     </task>
     <servers />
   </component>

@@ -23,7 +23,8 @@
         api -> common-mail
         api可以使用service、pojo与common中相应的方法的
     -->
-
+    <!-- 打包war [1] -->
+    <packaging>war</packaging>
     <dependencies>
         <dependency>
             <groupId>com.zcq</groupId>
