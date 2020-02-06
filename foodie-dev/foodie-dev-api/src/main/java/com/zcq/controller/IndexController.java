@@ -7,10 +7,13 @@ import com.zcq.pojo.vo.CategoryVO;
 import com.zcq.pojo.vo.NewItemsVO;
 import com.zcq.service.CarouselService;
 import com.zcq.service.CategoryService;
+import com.zcq.utils.JsonUtils;
+import com.zcq.utils.RedisOperator;
 import com.zcq.utils.ZCQJSONResult;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,14 +29,30 @@ public class IndexController {
 
     @Autowired
     private CarouselService carouselService;
-    
+
     @Autowired
     private CategoryService categoryService;
+
+    @Autowired
+    private RedisOperator redisOperator;
+
+    /**
+     * 1。广告图发生改变，删除缓存，然后重置
+     * 2。定时重置
+     * 3。每个轮播图有可能是一个广告，可能会过期，过期后在重置。
+     */
 
     @ApiOperation(value = "获取首页轮播图列表", notes = "获取首页轮播图列表", httpMethod = "GET")
     @GetMapping("/carousel")
     public ZCQJSONResult carousel() {
-        List<Carousel> list = carouselService.queryAll(YesOrNo.YES.type);
+        String carouselStr = redisOperator.get("carousel");
+        List<Carousel> list = null;
+        if (StringUtils.isBlank(carouselStr)) {
+            list = carouselService.queryAll(YesOrNo.YES.type);
+            redisOperator.set("carousel", JsonUtils.objectToJson(list));
+        } else {
+            list = JsonUtils.jsonToList(carouselStr, Carousel.class);
+        }
         return ZCQJSONResult.ok(list);
     }
 
