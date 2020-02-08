@@ -111,7 +111,7 @@ public class RedisOperator {
 	}
 
 	/**
-	 * 批量查询，对应mget
+	 * 批量查询(对应mget)
 	 * @param keys
 	 * @return
 	 */
@@ -120,14 +120,11 @@ public class RedisOperator {
 	}
 
 	/**
-	 * 批量查询，管道pipeline
+	 * 批量查询(管道pipeline)
 	 * @param keys
 	 * @return
 	 */
 	public List<Object> batchGet(List<String> keys) {
-
-//		nginx -> keepalive
-//		redis -> pipeline
 
 		List<Object> result = redisTemplate.executePipelined(new RedisCallback<String>() {
 			@Override
