@@ -7,18 +7,18 @@ spring:
     password: root
   redis:
   #    Redis单机单实例
-#    database: 0
-#    host: 172.16.13.130
-#    host: 127.0.0.1
-#    port: 6379
+    database: 0
+    host: 127.0.0.1
+    port: 6379
     # redis哨兵模式
 #    database: 0
 #    sentinel:
 #      master: mymaster
 #      nodes: 111.231.64.120:26379,111.231.64.120:26380,111.231.64.120:26381 # 哨兵节点的地址
-    database: 0
-    cluster: #集群模式
-      nodes: 111.231.64.120:6301,111.231.64.120:6302,111.231.64.120:6303,111.231.64.120:6304,111.231.64.120:6305,111.231.64.120:6306 # 三主三从
+#    database: 0
+#    cluster: #集群模式
+#      nodes: 111.231.64.120:6301,111.231.64.120:6302,111.231.64.120:6303,111.231.64.120:6304,111.231.64.120:6305,111.231.64.120:6306 # 三主三从
+
 mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

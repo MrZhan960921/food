@@ -66,10 +66,10 @@ public class IndexController {
     public ZCQJSONResult cats() {
         String categoryStr = redisOperator.get("category");
         List<Category> list = null;
-        if (StringUtils.isBlank(categoryStr)){
+        if (StringUtils.isBlank(categoryStr)) {
             list = categoryService.queryAllRootLevelCat();
             redisOperator.set("category", JsonUtils.objectToJson(list));
-        }else {
+        } else {
             list = JsonUtils.jsonToList(categoryStr, Category.class);
         }
         return ZCQJSONResult.ok(list);
@@ -81,16 +81,28 @@ public class IndexController {
             @ApiParam(name = "rootCatId", value = "一级分类id", required = true)
             @PathVariable Integer rootCatId) {
 
-        if (null == rootCatId){
+        if (null == rootCatId) {
             return ZCQJSONResult.errorMsg("分类不存在");
         }
 
-        String subCategoryStr = redisOperator.get("subCategory:"+rootCatId);
+        String subCategoryStr = redisOperator.get("subCategory:" + rootCatId);
         List<CategoryVO> list = null;
-        if (StringUtils.isBlank(subCategoryStr)){
+        if (StringUtils.isBlank(subCategoryStr)) {
             list = categoryService.getSubCatList(rootCatId);
-            redisOperator.set("subCategory:"+rootCatId, JsonUtils.objectToJson(list));
-        }else {
+            /**
+             * 查询的key在redis中不存在
+             * 对应的id在数据库也不存在
+             * 此时被非法用户进行攻击，会全部打在db上
+             * 造成宕机
+             * 这就是redis的缓存穿透
+             * 解决方案：把空的数据也缓存起来，比如空字符串，空的对象，空数组或者list
+             */
+            if (list != null && list.size() > 0) {
+                redisOperator.set("subCategory:" + rootCatId, JsonUtils.objectToJson(list));
+            }else{
+                redisOperator.set("subCategory:" + rootCatId, JsonUtils.objectToJson(list),5*60);
+            }
+        } else {
             list = JsonUtils.jsonToList(subCategoryStr, CategoryVO.class);
         }
         return ZCQJSONResult.ok(list);
