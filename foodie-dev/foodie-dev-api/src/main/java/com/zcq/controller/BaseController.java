@@ -1,20 +1,31 @@
 package com.zcq.controller;
 
 import com.zcq.pojo.Orders;
+import com.zcq.pojo.Users;
+import com.zcq.pojo.vo.UsersVO;
 import com.zcq.service.center.MyOrdersService;
+import com.zcq.utils.RedisOperator;
 import com.zcq.utils.ZCQJSONResult;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import java.io.File;
+import java.util.UUID;
 
 @Controller
 public class BaseController {
+
+
+    @Autowired
+    private RedisOperator redisOperator;
 
     public static final String FOODIE_SHOPCART = "shopcart";
 
     public static final Integer COMMON_PAGE_SIZE = 10;
     public static final Integer PAGE_SIZE = 20;
+
+    public static final String REDIS_USER_TOKEN = "redis_user_token";
 
     // 支付中心的调用地址
     String paymentUrl = "http://payment.t.mukewang.com/foodie-payment/payment/createMerchantOrder";		// produce
@@ -43,5 +54,20 @@ public class BaseController {
             return ZCQJSONResult.errorMsg("订单不存在！");
         }
         return ZCQJSONResult.ok(order);
+    }
+
+    /**
+     * 实现从users 到usersVO的转换
+     * 将用户的token存入redis
+     * @param users
+     * @return
+     */
+    public UsersVO convert(Users users){
+        String uniqueToken = UUID.randomUUID().toString().trim();
+        redisOperator.set(REDIS_USER_TOKEN + ":" + users.getId(),uniqueToken);
+        UsersVO usersVO = new UsersVO();
+        BeanUtils.copyProperties(users,usersVO);
+        usersVO.setUserUniqueToken(uniqueToken);
+        return usersVO;
     }
 }

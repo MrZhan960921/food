@@ -4,6 +4,7 @@ package com.zcq.controller.center;
 import com.zcq.controller.BaseController;
 import com.zcq.pojo.Users;
 import com.zcq.pojo.bo.center.CenterUserBO;
+import com.zcq.pojo.vo.UsersVO;
 import com.zcq.resource.FileUpload;
 import com.zcq.service.center.CenterUserService;
 import com.zcq.utils.CookieUtils;
@@ -129,11 +130,12 @@ public class CenterUserController extends BaseController {
         // 更新用户头像到数据库
         Users userResult = centerUserService.updateUserFace(userId, finalUserFaceUrl);
 
-        userResult = setNullProperty(userResult);
+//        userResult = setNullProperty(userResult);
+        UsersVO usersVO = convert(userResult);
         CookieUtils.setCookie(request, response, "user",
-                JsonUtils.objectToJson(userResult), true);
+                JsonUtils.objectToJson(usersVO), true);
 
-        // TODO 后续要改，增加令牌token，会整合进redis，分布式会话
+
 
         return ZCQJSONResult.ok();
     }
@@ -159,10 +161,9 @@ public class CenterUserController extends BaseController {
         Users userResult = centerUserService.updateUserInfo(userId, centerUserBO);
 
         userResult = setNullProperty(userResult);
+        UsersVO usersVO = convert(userResult);
         CookieUtils.setCookie(request, response, "user",
-                JsonUtils.objectToJson(userResult), true);
-
-        // TODO 后续要改，增加令牌token，会整合进redis，分布式会话
+                JsonUtils.objectToJson(usersVO), true);
 
         return ZCQJSONResult.ok();
     }

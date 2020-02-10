@@ -4,11 +4,13 @@ import com.zcq.pojo.Users;
 
 import com.zcq.pojo.bo.ShopcartBO;
 import com.zcq.pojo.bo.UserBO;
+import com.zcq.pojo.vo.UsersVO;
 import com.zcq.service.UserService;
 import com.zcq.utils.*;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Api(value = "注册登录", tags = {"用于注册登录的相关接口"})
 @RestController
@@ -83,17 +86,17 @@ public class PassportController extends BaseController{
         // 4. 实现注册
         Users userResult = userService.createUser(userBO);
 
-        userResult = setNullProperty(userResult);
+        //生成用户token，存入redis会话
+        UsersVO usersVO = convert(userResult);
+
+//        userResult = setNullProperty(userResult);
         //将客户信息放到cookie
         CookieUtils.setCookie(request, response, "user",
-                JsonUtils.objectToJson(userResult), true);
+                JsonUtils.objectToJson(usersVO), true);
 
 
         // 同步购物车数据
         synchShopCartData(userResult.getId(),request,response);
-
-
-        // TODO 生成用户token，存入redis会话
 
 
         return ZCQJSONResult.ok();
@@ -123,11 +126,21 @@ public class PassportController extends BaseController{
         }
 
         userResult = setNullProperty(userResult);
+
+
+        /**
+         * 生成用户token，存入redis会话
+         * 前端发送接口请求携带这个token信息
+         * 后端可以设置相应的拦截器判断redis是否有该token信息
+         * 随后来判断用户的登录状态，对前端的请求进行拦截。
+         * 从而实现会话的分布式管理
+         */
+        UsersVO usersVO = convert(userResult);
+
         //将客户信息放到cookie
         CookieUtils.setCookie(request, response, "user",
-                JsonUtils.objectToJson(userResult), true);
+                JsonUtils.objectToJson(usersVO), true);
 
-        // TODO 生成用户token，存入redis会话
         // 同步购物车数据
         synchShopCartData(userResult.getId(),request,response);
 
@@ -142,7 +155,8 @@ public class PassportController extends BaseController{
 
         //清除用户相关的cookie
         CookieUtils.deleteCookie(request,response,"user");
-        // todo 分布式会话中需要清除用户数据
+        // 分布式会话中需要清除用户数据
+        redisOperator.del(REDIS_USER_TOKEN +":"+ userId);
         // 用户退出登陆，需要清空购物车
         CookieUtils.deleteCookie(request,response,FOODIE_SHOPCART);
         return ZCQJSONResult.ok();
@@ -230,5 +244,6 @@ public class PassportController extends BaseController{
         userResult.setBirthday(null);
         return userResult;
     }
+
 
 }
