@@ -17,6 +17,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * 				502：拦截器拦截到用户token出错
  * 				555：异常抛出信息
  * 				556: 用户qq校验异常
+ * 			    557: 校验用户是否在cas登陆
  * @Copyright: Copyright (c) 2020
  * @Company: www.zcq.com
  * @author zcq
@@ -73,6 +74,10 @@ public class ZCQJSONResult {
     
     public static ZCQJSONResult errorUserQQ(String msg) {
         return new ZCQJSONResult(556, msg, null);
+    }
+
+    public static ZCQJSONResult errorUserTicket(String msg) {
+        return new ZCQJSONResult(557, msg, null);
     }
 
     public ZCQJSONResult() {

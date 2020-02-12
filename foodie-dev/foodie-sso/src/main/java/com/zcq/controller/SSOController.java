@@ -135,6 +135,33 @@ public class SSOController {
     }
 
 
+    @PostMapping("/verifyTmpTicket")
+    @ResponseBody
+    public ZCQJSONResult verifyTmpTicket(String tmpTicket,
+                                         HttpServletRequest request,
+                                         HttpServletResponse response) throws Exception {
+        // 使用一次性临时票据来验证用户是否登录，如果登录过，把用户会话信息返回给站点
+        // 使用完毕后，需要销毁临时票据
+        String tmpTicketValue = redisOperator.get(REDIS_TMP_TICKET + ":" + tmpTicket);
+        if (StringUtils.isBlank(tmpTicketValue)){
+            return ZCQJSONResult.errorUserTicket("用户票据异常");
+        }
+
+        // 0. 如果临时票据OK，则需要销毁，并且拿到CAS端cookie中的全局userTicket，以此再获取用户会话
+        if (!tmpTicketValue.equals(MD5Utils.getMD5Str(tmpTicket))){
+            return ZCQJSONResult.errorUserTicket("用户票据异常");
+        }else {
+            // 销毁临时票据
+            redisOperator.del(REDIS_TMP_TICKET + ":" + tmpTicket);
+        }
+        // 1. 验证并且获取用户的userTicket
+        String userTicket = getCookie(request, COOKIE_USER_TICKET);
+        String userId = redisOperator.get(REDIS_USER_TICKET + ":" + userTicket);
+        if (StringUtils.isBlank(userId)){
+            return ZCQJSONResult.errorUserTicket("用户票据异常");
+        }
+        return ZCQJSONResult.ok();
+    }
 
 
     /**
@@ -162,5 +189,24 @@ public class SSOController {
         cookie.setDomain("sso.com");
         cookie.setPath("/");
         response.addCookie(cookie);
+    }
+
+    private String getCookie(HttpServletRequest request,
+                             String key){
+        Cookie[] cookies = request.getCookies();
+        if (null == cookies || StringUtils.isBlank(key)){
+            return null;
+        }
+        String cookieValue = null;
+
+        for (int i = 0; i < cookies.length; i++) {
+            if (cookies[i].getName().equals(key)){
+                cookieValue = cookies[i].getValue();
+                break;
+            }
+        }
+
+        return cookieValue;
+
     }
 }
