@@ -160,7 +160,14 @@ public class SSOController {
         if (StringUtils.isBlank(userId)){
             return ZCQJSONResult.errorUserTicket("用户票据异常");
         }
-        return ZCQJSONResult.ok();
+
+        // 2. 验证门票对应的user会话是否存在
+        String userRedis = redisOperator.get(REDIS_USER_TOKEN + ":" + userId);
+        if (StringUtils.isBlank(userRedis)){
+            return ZCQJSONResult.errorUserTicket("用户票据异常");
+        }
+        // 验证成功，返回OK，携带用户会话
+        return ZCQJSONResult.ok(JsonUtils.jsonToPojo(userRedis,UsersVO.class));
     }
 
 
