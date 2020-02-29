@@ -1,4 +1,4 @@
-package zcq.config;
+package com.zcq.config;
 
 import org.springframework.context.annotation.Configuration;
 

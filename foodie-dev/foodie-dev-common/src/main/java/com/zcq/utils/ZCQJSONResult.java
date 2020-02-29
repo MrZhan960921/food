@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 /**
  * 
  * @Title: ZCQJSONResult.java
- * @Package com.zcq.utils
+ * @Package com.com.zcq.utils
  * @Description: 自定义响应数据结构
  * 				本类可提供给 H5/ios/安卓/公众号/小程序 使用
  * 				前端接受此类数据（json object)后，可自行根据业务去实现相关功能
@@ -19,8 +19,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * 				556: 用户qq校验异常
  * 			    557: 校验用户是否在cas登陆
  * @Copyright: Copyright (c) 2020
- * @Company: www.zcq.com
- * @author zcq
+ * @Company: www.com.zcq.com
+ * @author com.zcq
  * @version V1.0
  */
 public class ZCQJSONResult {

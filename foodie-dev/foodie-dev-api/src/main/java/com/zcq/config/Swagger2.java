@@ -25,7 +25,7 @@ public class Swagger2 {
                     .apiInfo(apiInfo())                 // 用于定义api文档汇总信息
                     .select()
                     .apis(RequestHandlerSelectors
-                            .basePackage("com.zcq.controller"))   // 指定controller包
+                            .basePackage("com.com.zcq.controller"))   // 指定controller包
                     .paths(PathSelectors.any())         // 所有controller
                     .build();
     }
@@ -33,9 +33,9 @@ public class Swagger2 {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("天天吃货 电商平台接口api")        // 文档页标题
-                .contact(new Contact("zcq",
+                .contact(new Contact("com.zcq",
                         "https://www.zcq.com",
-                        "abc@zcq.com"))        // 联系人信息
+                        "abc@com.zcq.com"))        // 联系人信息
                 .description("专为天天吃货提供的api文档")  // 详细信息
                 .version("1.0.1")   // 文档版本号
                 .termsOfServiceUrl("https://www.zcq.com") // 网站地址

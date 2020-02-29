@@ -15,12 +15,12 @@ import java.net.URLEncoder;
  * cookie不能跨域
  *
  * @Title: CookieUtils.java
- * @Package com.zcq.utils
+ * @Package com.com.zcq.utils
  * @Description: Cookie 工具类
  * Copyright: Copyright (c)
- * Company: www.zcq.com
+ * Company: www.com.zcq.com
  *
- * @author zcq
+ * @author com.zcq
  * @version V1.0
  */
 public final class CookieUtils {
