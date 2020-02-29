@@ -3,6 +3,7 @@ package com.zcq;
 import com.zcq.es.pojo.Stu;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.search.SearchResponse;
+import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.SearchHits;
@@ -94,7 +95,23 @@ public class ESTest {
         esTemplate.delete(Stu.class, "10032");
     }
 
+    @Test
+    public void searchStuDoc() {
 
+        Pageable pageable = PageRequest.of(0, 10);
+
+        SearchQuery query = new NativeSearchQueryBuilder()
+                .withQuery(QueryBuilders.matchQuery("money", 11))
+                .withQuery(QueryBuilders.matchQuery("name", "tony man"))
+                .withPageable(pageable)
+                .build();
+
+        AggregatedPage<Stu> stus = esTemplate.queryForPage(query, Stu.class);
+        System.out.println("总分页数目"+stus.getTotalPages());
+        for (Stu stu : stus.getContent()) {
+            System.out.println(stu);
+        }
+    }
 }
 
 
