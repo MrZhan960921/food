@@ -63,16 +63,16 @@ public class ESTest {
     }
 
     // ------------------------------
-
+    // 文档操作
     @Test
     public void updateStuDoc() {
         HashMap<String, Object> sourceMap = new HashMap<>();
-        sourceMap.put("name","tony man");
+        sourceMap.put("name", "tony man");
 
-        IndexRequest indexRequest=new IndexRequest();
+        IndexRequest indexRequest = new IndexRequest();
         indexRequest.source(sourceMap);
 
-        UpdateQuery updateQuery=new UpdateQueryBuilder()
+        UpdateQuery updateQuery = new UpdateQueryBuilder()
                 .withClass(Stu.class)
                 .withId("10032")
                 .withIndexRequest(indexRequest)
@@ -80,6 +80,20 @@ public class ESTest {
 
         esTemplate.update(updateQuery);
     }
+
+    @Test
+    public void getIndexStu() {
+        GetQuery getQuery = new GetQuery();
+        getQuery.setId("10032");
+        Stu stu = esTemplate.queryForObject(getQuery, Stu.class);
+        System.out.println(stu);
+    }
+
+    @Test
+    public void deleteStuDoc() {
+        esTemplate.delete(Stu.class, "10032");
+    }
+
 
 }
 
