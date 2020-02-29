@@ -100,10 +100,17 @@ public class ESTest {
 
         Pageable pageable = PageRequest.of(0, 10);
 
+        SortBuilder sortBuilder=new FieldSortBuilder("money")
+                .order(SortOrder.DESC);
+        SortBuilder ageBuilder = new FieldSortBuilder("age")
+                .order(SortOrder.DESC);
+
         SearchQuery query = new NativeSearchQueryBuilder()
                 .withQuery(QueryBuilders.matchQuery("money", 11))
                 .withQuery(QueryBuilders.matchQuery("name", "man"))
                 .withPageable(pageable)
+                .withSort(sortBuilder)
+                .withSort(ageBuilder)
                 .build();
 
         AggregatedPage<Stu> stus = esTemplate.queryForPage(query, Stu.class);
