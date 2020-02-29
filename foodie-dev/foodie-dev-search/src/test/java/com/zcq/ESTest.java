@@ -27,6 +27,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class)
@@ -44,7 +45,7 @@ public class ESTest {
     @Test
     public void createIndexStu() {
         Stu stu = new Stu();
-//        stu.setStuId(10032l);
+        stu.setStuId(10032l);
         stu.setName("bb man");
         stu.setAge(66);
         stu.setMoney(66);
@@ -52,15 +53,33 @@ public class ESTest {
         stu.setSign("1");
         //没有索引创建索引会根据stu里设置的属性来映射es索引的mappings
         //没有索引会创建索引并生成文档。有索引会生成文档，不会覆盖。
-        IndexQuery indexQuery=new IndexQueryBuilder().withObject(stu).build();
+        IndexQuery indexQuery = new IndexQueryBuilder().withObject(stu).build();
         esTemplate.index(indexQuery);
     }
 
     @Test
-    public void deleteIndexStu(){
+    public void deleteIndexStu() {
         esTemplate.deleteIndex(Stu.class);
     }
 
+    // ------------------------------
+
+    @Test
+    public void updateStuDoc() {
+        HashMap<String, Object> sourceMap = new HashMap<>();
+        sourceMap.put("name","tony man");
+
+        IndexRequest indexRequest=new IndexRequest();
+        indexRequest.source(sourceMap);
+
+        UpdateQuery updateQuery=new UpdateQueryBuilder()
+                .withClass(Stu.class)
+                .withId("10032")
+                .withIndexRequest(indexRequest)
+                .build();
+
+        esTemplate.update(updateQuery);
+    }
 
 }
 
