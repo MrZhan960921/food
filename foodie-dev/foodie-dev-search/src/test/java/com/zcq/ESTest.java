@@ -35,18 +35,32 @@ public class ESTest {
     @Autowired
     private ElasticsearchTemplate esTemplate;
 
+
+    /**
+     * 不建议使用ElasticsearchTemplate 对索引进行管理【增、删、改】
+     * 索引就像是数据库，或者表。。
+     * 只会对数据做CRUD操作【对文档数据使用ElasticsearchTemplate】
+     */
     @Test
     public void createIndexStu() {
         Stu stu = new Stu();
-        stu.setStuId(1003l);
+//        stu.setStuId(10032l);
         stu.setName("bb man");
         stu.setAge(66);
         stu.setMoney(66);
         stu.setDescription("bb man");
         stu.setSign("1");
+        //没有索引创建索引会根据stu里设置的属性来映射es索引的mappings
+        //没有索引会创建索引并生成文档。有索引会生成文档，不会覆盖。
         IndexQuery indexQuery=new IndexQueryBuilder().withObject(stu).build();
         esTemplate.index(indexQuery);
     }
+
+    @Test
+    public void deleteIndexStu(){
+        esTemplate.deleteIndex(Stu.class);
+    }
+
 
 }
 
