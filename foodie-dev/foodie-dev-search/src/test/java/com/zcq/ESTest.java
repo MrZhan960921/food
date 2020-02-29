@@ -102,12 +102,67 @@ public class ESTest {
 
         SearchQuery query = new NativeSearchQueryBuilder()
                 .withQuery(QueryBuilders.matchQuery("money", 11))
-                .withQuery(QueryBuilders.matchQuery("name", "tony man"))
+                .withQuery(QueryBuilders.matchQuery("name", "man"))
                 .withPageable(pageable)
                 .build();
 
         AggregatedPage<Stu> stus = esTemplate.queryForPage(query, Stu.class);
-        System.out.println("总分页数目"+stus.getTotalPages());
+        System.out.println("总分页数目" + stus.getTotalPages());
+        for (Stu stu : stus.getContent()) {
+            System.out.println(stu);
+        }
+    }
+
+    @Test
+    public void hignlightStuDoc() {
+
+        String preTag = "<font color='red'>";
+        String postTag = "</font>";
+
+        Pageable pageable = PageRequest.of(0, 10);
+
+        SearchQuery query = new NativeSearchQueryBuilder()
+                .withQuery(QueryBuilders.matchQuery("description", "man"))
+                .withHighlightFields(new HighlightBuilder.Field("description")
+                        .preTags(preTag)
+                        .postTags(postTag))
+                .withPageable(pageable)
+                .build();
+
+        //SearchResultMapper修改搜索结果的映射来设置高亮
+        AggregatedPage<Stu> stus = esTemplate.queryForPage(query, Stu.class, new SearchResultMapper() {
+            @Override
+            public <T> AggregatedPage<T> mapResults(SearchResponse searchResponse, Class<T> aClass, Pageable pageable) {
+                List<Stu> stuList = new ArrayList<>();
+                SearchHits hits = searchResponse.getHits();
+
+                for (SearchHit hit : hits) {
+                    HighlightField description = hit.getHighlightFields().get("description");
+                    String desc = description.getFragments()[0].toString();
+
+                    Object stuId = (Object) hit.getSourceAsMap().get("stuId");
+                    String sign = (String) hit.getSourceAsMap().get("sign");
+                    String name = (String) hit.getSourceAsMap().get("name");
+                    Integer age = (Integer) hit.getSourceAsMap().get("age");
+                    Object money = (Object) hit.getSourceAsMap().get("money");
+                    Stu stu = new Stu();
+                    stu.setDescription(desc);
+                    stu.setSign(sign);
+                    stu.setName(name);
+                    stu.setStuId(Long.valueOf(stuId.toString()));
+                    stu.setAge(age);
+                    stu.setMoney(Integer.valueOf(money.toString()));
+                    stuList.add(stu);
+                }
+
+                if (null != stuList && stuList.size() > 0){
+                    return new AggregatedPageImpl<>((List<T>)stuList);
+
+                }
+                return null;
+            }
+        });
+        System.out.println("总分页数目" + stus.getTotalPages());
         for (Stu stu : stus.getContent()) {
             System.out.println(stu);
         }
