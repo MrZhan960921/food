@@ -16,4 +16,4 @@ spring:
   data:
     elasticsearch:
       cluster-name: elasticsearch
-      cluster-nodes: localhost:9301
+      cluster-nodes: 111.231.64.120:9300

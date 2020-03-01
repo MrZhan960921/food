@@ -6,7 +6,7 @@ import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
 
-@Document(indexName = "stu",type = "doc")
+@Document(indexName = "stu",type = "_doc")
 public class Stu {
 
     @Id
