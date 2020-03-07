@@ -12,6 +12,7 @@
         <module name="foodie-dev-api" />
         <module name="foodie-dev-mapper" />
         <module name="foodie-dev-search" />
+        <module name="foodie-dev-fs" />
         <module name="foodie-dev-service" />
       </profile>
     </annotationProcessing>
@@ -20,6 +21,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="foodie-dev-api" options="-parameters" />
       <module name="foodie-dev-common" options="-parameters" />
+      <module name="foodie-dev-fs" options="-parameters" />
       <module name="foodie-dev-mapper" options="-parameters" />
       <module name="foodie-dev-pojo" options="-parameters" />
       <module name="foodie-dev-search" options="-parameters" />
