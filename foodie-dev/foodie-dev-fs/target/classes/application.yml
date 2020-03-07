@@ -4,7 +4,7 @@
 #
 ############################################################
 server:
-  port: 8088
+  port: 8066
   tomcat:
     uri-encoding: UTF-8
   max-http-header-size: 80KB
@@ -64,3 +64,8 @@ pagehelper:
   helperDialect: mysql
   supportMethodsArguments: true
 
+#fdfs配置
+fdfs:
+  connect-timeout: 30
+  so-timeout: 30
+  tracker-list: 192.168.196.132:22122 # tracker服务所在的ip和端口
