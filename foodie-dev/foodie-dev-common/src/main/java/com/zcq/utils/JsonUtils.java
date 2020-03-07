@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * 
  * @Title: JsonUtils.java
- * @Package com.com.zcq.utils
+ * @Package com.zcq.utils
  * @Description: json转换类
  * Copyright: Copyright (c)
  * Company: www.com.zcq.com

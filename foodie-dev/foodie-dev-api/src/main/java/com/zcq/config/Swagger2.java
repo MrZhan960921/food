@@ -25,7 +25,7 @@ public class Swagger2 {
                     .apiInfo(apiInfo())                 // 用于定义api文档汇总信息
                     .select()
                     .apis(RequestHandlerSelectors
-                            .basePackage("com.com.zcq.controller"))   // 指定controller包
+                            .basePackage("com.zcq.controller"))   // 指定controller包
                     .paths(PathSelectors.any())         // 所有controller
                     .build();
     }

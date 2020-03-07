@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 import tk.mybatis.spring.annotation.MapperScan;
 
 @SpringBootApplication
-@MapperScan(basePackages = "com.com.zcq.mapper")
+@MapperScan(basePackages = "com.zcq.mapper")
 //扫描所有包以及相关使用包
 @ComponentScan(basePackages = {"com.zcq","org.n3r.idworker"})
 public class Application {

@@ -40,6 +40,7 @@ public class CenterUserController extends BaseController{
 
         String path = "";
         // 开始文件上传
+
         if (file != null) {
             // 获得文件上传的文件名称
             String fileName = file.getOriginalFilename();
@@ -56,8 +57,9 @@ public class CenterUserController extends BaseController{
                         !suffix.equalsIgnoreCase("jpeg") ) {
                     return ZCQJSONResult.errorMsg("图片格式不正确！");
                 }
+                path = fdfsService.uploadOSS(file, userId, suffix);
 
-                path = fdfsService.upload(file, suffix);
+//                path = fdfsService.upload(file, suffix);
 
                 System.out.println(path);
             }
@@ -66,7 +68,11 @@ public class CenterUserController extends BaseController{
         }
 
         if (StringUtils.isNotBlank(path)) {
-            String finalUserFaceUrl = fileResource.getHost() + path;
+
+            //http://192.168.196.132:8888//group1/M00/00/00/wKjEhF5j5WuASOJVAAB78X5-Hcw57.jpeg
+//            String finalUserFaceUrl = fileResource.getHost() + path;
+            //真实完整oss文件地址
+            String finalUserFaceUrl = fileResource.getOssHost() + path;
 
             Users userResult = centerUserService.updateUserFace(userId, finalUserFaceUrl);
 

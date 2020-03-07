@@ -11,7 +11,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 
 @SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
 //扫描mybatis通用mapper
-@MapperScan(basePackages = "com.com.zcq.mapper")
+@MapperScan(basePackages = "com.zcq.mapper")
 //@EnableTransactionManagement
 // 扫描所有包以及相关组件包
 @ComponentScan(basePackages = {"com.zcq", "org.n3r.idworker"})
